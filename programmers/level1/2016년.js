@@ -9,9 +9,3 @@ function solution(a, b) {
     sum+=b;
     return day[sum%7];
 }
-
-/* indexOf으로 
-const uniqueArr = dupArr.filter((element, index) => {
-    return dupArr.indexOf(element) === index;
-});
-*/
