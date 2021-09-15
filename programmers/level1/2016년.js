@@ -1,15 +1,17 @@
-function solution(numbers) {
-    var sum=[];
-    numbers.forEach((e,index)=>{
-        for(let i=index+1;i<numbers.length;i++){
-            sum.push(e+numbers[i]);
-        }
+//Date 객체 써도 됨
+function solution(a, b) {
+    var month=[0,31,29,31,30,31,30,31,31,30,31,30,31];
+    var day = ['THU','FRI','SAT','SUN','MON','TUE','WED'];
+    var sum=0;
+    month.forEach((e,i)=>{
+        if(i<a) sum+=e;
     });
-    return Array.from(new Set(sum.sort((a,b)=>a-b)));
+    sum+=b;
+    return day[sum%7];
 }
 
-    // 배열에서 중복값 제거 이 방법도 가능
-    // indexOf은 처음부터 찾으니까 만약에 [3, 3] 이 있으면 1번 인덱스의 indexOf은 0이 나옴
-    // sum = sum.sort((a,b)=>a-b).filter((element, index) => {
-    //     return sum.indexOf(element) === index;
-    // });
+/* indexOf으로 
+const uniqueArr = dupArr.filter((element, index) => {
+    return dupArr.indexOf(element) === index;
+});
+*/
