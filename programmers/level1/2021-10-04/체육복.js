@@ -8,8 +8,6 @@ function solution(n, lost, reserve) {
             lost.splice(lost.indexOf(j),1);
         }
     }
-    console.log(lost);
-    console.log(reserve);
     lost.forEach(e=>{
         for(let i=0;i<reserve.length;i++){
             if(e==reserve[i]-1||e==reserve[i]+1){
