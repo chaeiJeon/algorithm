@@ -1,0 +1,33 @@
+function solution(numbers, hand) {
+    var answer = '';
+    var keypad = [[1,2,3],[4,5,6],[7,8,9]];
+    var left=[];
+    var right=[];
+    var temp=[];
+    numbers.forEach((number)=>{
+        console.log("---- ",number," ------")
+        keypad.forEach((line,index)=>{
+            var lineTemp=line.findIndex(element=>element===number);
+            if(lineTemp>=0){
+                temp=[];
+                temp[0]=index;
+                temp[1]=lineTemp;
+            }
+        })    
+        if(number%3==1){
+            console.log(">> L")
+            answer+='L';
+            left=temp;
+        }
+        else if(number%3==0){
+            console.log(">> R")
+            answer+='R';
+            right=temp;
+        }
+        else{
+            
+        }
+        console.log("right + ",right);
+        console.log("left + ",left);
+    })
+}
